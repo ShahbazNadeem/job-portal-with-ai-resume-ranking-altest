@@ -1,23 +1,42 @@
 {
-  "name": "ai-base-job-portal",
+  "name": "job-portal",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "lottie-react": "^2.4.1",
+    "mammoth": "^1.10.0",
+    "mongoose": "^8.18.0",
+    "motion": "^12.23.12",
+    "natural": "^8.1.0",
+    "next": "15.4.5",
+    "next-auth": "^4.24.11",
+    "nlcst-to-string": "^4.0.0",
+    "ollama": "^0.5.17",
+    "openai": "^5.20.0",
+    "pdf-parse": "^1.1.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.3"
+    "react-icons": "^5.5.0",
+    "retext": "^9.0.0",
+    "retext-english": "^5.0.0",
+    "retext-keywords": "^8.0.2",
+    "retext-pos": "^5.0.0",
+    "tesseract.js": "^6.0.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "15.5.3",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.4.5",
+    "tailwindcss": "^4"
   }
 }

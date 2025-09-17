@@ -1,26 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
+@utility container {
+  margin: auto;
+}
+
 :root {
-  --background: #ffffff;
+  --background: #ECECEC;
   --foreground: #171717;
+  --primary: #989898;
+  --body: #090b0c;
+  --secondary: #ffffff;
+  --whitecolor: #ffffff;
+  --text: #737373;
+  /* #B8B8B8 */
+  --backgorund: #1a2b48;
+  --accent: #000000;
+  --border: #e4e6e8;
+  /* global font  */
+  --font-roboto: "Roboto", sans-serif;
+  --font-arimo: "Arimo", sans-serif;
+  --font-grotesk: "Space Grotesk", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Hide scrollbar but keep scrolling */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+.spaceGrotesk {
+  font-family: var(--font-grotesk);
+}
+
+.body-color {
+  background-color: var(--background);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 116px;
+  line-height: 124px;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 60px;
+}
+
+ul {
+  font-family: var(--font-roboto);
+}
+
+input {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  padding: 0.625rem;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button1 {
+  background: linear-gradient(90deg, rgba(206, 159, 252, 1) 11%, rgba(165, 130, 247, 1) 51%, rgba(115, 103, 240, 1) 92%);
+  padding: 8px 20px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-gradient-border {
+  @apply cursor-pointer relative inline-flex items-center p-0.5 justify-center overflow-hidden text-sm font-medium rounded-md bg-gradient-to-br from-purple-500 to-pink-500;
+}
+
+.btn-gradient-border-inner {
+  @apply relative px-2 py-2 rounded-md text-gray-900;
+}
+
+.curved-rectangle {
+  --c: 60;
+  width: 100%;
+  padding: 102px 0px 30px 0px;
+  background: linear-gradient(180deg, rgba(206, 159, 252, 1) 0%, rgba(165, 130, 247, 1) 51%, rgba(115, 103, 240, 1) 92%);
+  mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+}
+
+.blob {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: #4a6cd1;
+  clip-path: shape(from 94.14% 38.16%, curve to 89.06% 64.60% with 96.36% 52.92%, curve to 71.68% 85.71% with 81.77% 76.28%, curve to 48.43% 91.18% with 61.59% 95.14%, curve to 24.84% 79.90% with 35.27% 87.21%, curve to 8.08% 59.77% with 14.41% 72.59%, curve to 9.34% 34.80% with 1.75% 46.96%, curve to 27.81% 14.30% with 16.93% 22.64%, curve to 53.23% 5.53% with 38.69% 5.95%, curve to 79.85% 14.26% with 67.77% 5.11%, curve to 94.14% 38.16% with 91.92% 23.40%);
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 102px;
+    line-height: 98px;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    line-height: 65px;
+    font-size: 65px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {
+
+  h1 {
+    line-height: 65px;
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .curved-rectangle {
+    --c: 70;
+  }
+}
+
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .curved-rectangle {
+    --c: 80;
+    padding-bottom: 30px;
+  }
 }
